@@ -4,18 +4,15 @@ let input;
 let total = 0;
 let covertInputToNumber;
 
-for (let i = 0; input !== null; i += 1){ 
-
-    input = prompt('Введите число :');
-
-    if (input === null) {
-        alert(total);
+do {
+    input = prompt('Введите число');
+    if (isNaN(input)) {
+        alert('Некорректный ввод, попробуйте еще раз');
     } else {
-        covertInputToNumber = Number(input);
-        total += i;
-    };
+        total += Number(input);
+    }
+} while(input !== null)
 
-};
 
-alert(total);
+alert(`Общая сумма чисел равна ${total}`);
 
